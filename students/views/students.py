@@ -16,6 +16,11 @@ def students_list(request):
          'last_name': u'Андрій',
          'ticket': 2123,
          'image': 'img/piv.png'},
+	{'id': 3,
+         'first_name': u'Тарас',
+         'last_name': u'Притула',
+         'ticket': 5332,
+         'image': 'img/podoba3.jpg'},
     )
     return render(request, 'students/students_list.html',
         {'students': students})

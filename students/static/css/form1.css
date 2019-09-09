@@ -1,0 +1,29 @@
+.form-group {
+
+	width: 300px;
+}
+
+form {
+
+	margin-left: 410px;
+}
+
+.avatar-button {
+	position: absolute;
+	top: 399px;
+	right: 470px;
+}
+
+h2 {
+	text-align: center;
+}
+
+.btn {
+	margin-left: 30px;
+}
+
+button {
+	margin-left: 35px;
+
+}
+
