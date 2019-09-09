@@ -13,13 +13,19 @@
 <body>
 	<!-- Start Container -->
 	<div class="container">
+
 		<!-- Start Header -->
+
 		<div class="row" id="header">
+
 			<!-- Logo -->
+
 			<div class="col-xs-8">
 				<h1>Сервіс Обліку Студентів</h1>
 			</div>
+
 			<!-- Groups Selector -->
+
 			<div class="col-xs-4" id="group-selector">
 				<strong>Група:</strong>
         		<select>
@@ -29,30 +35,38 @@
         		</select> 
 			</div>
 		</div>
+
 		<!-- End Header -->
 
 		<!-- Start Subheader -->
+
 		<div class="row" id="sub-header">
 			<div class="col-xs-12">
 				<ul class="nav nav-tabs" role="tablist">
           			<li role="presentation" class="active"><a href="/">Студенти</a></li>
-          			<li role="presentation"><a href="/home/taliana/static/second.html">Відвідування</a></li>
-          			<li role="presentation"><a href="/home/taliana/static/third.html">Групи</a></li>
+          			<li role="presentation"><a href="/journal">Відвідування</a></li>
+          			<li role="presentation"><a href="/groups">Групи</a></li>
         		</ul>
 			</div>
 		</div>
 		<!-- End SubHeader -->
 
 		<!-- Start Main Page Content -->
+
 		<div class="row" id="content-columns">
 			<div class="col-xs-12" id="content-column">
+
 				<!--Status message-->
+
 				<div class="alert alert-warning">Зміни скасовано.</div>
 				<h2>База Студентів</h2>
+
 				<!--Add student button-->
-				<a class="btn btn-primary" href="/students/add">Додати Студента</a>
+
+				<a class="btn btn-primary" href="{% url "students_add" %}">Додати Студента</a>
 
 				<!--Start student listing-->
+
 				<table class="table">
 					<thead>
 						<tr>
@@ -69,8 +83,8 @@
 						<tr>
 							<td>1</td>
 							<td><img class="img-circle" src="./img/podoba3.jpg" height="30" width="30" /></td>
-							<td><a href="#">Корост</td>
-							<td><a href="#">Андрій</td>
+							<td><a href="{% url "students_edit" 1 %}">Корост</td>
+							<td><a href="{% url "students_edit" 1 %}">Андрій</td>
 							<td>2123</td>
 							<td>
 								<div class="btn-group">
@@ -79,9 +93,9 @@
                     						<span class="caret"></span>
                   					</button>
                   					<ul class="dropdown-menu" role="menu">
-                    					<li><a href="/students/1/edit">Редагувати</a></li>
+                    					<li><a href="{% url "students_edit" 1 %}">Редагувати</a></li>
                     					<li><a href="/journal/1">Відвідування</a></li>
-                   						<li><a href="/students/1/delete">Видалити</a></li>
+                   						<li><a href="{% url "students_delete" 1 %}">Видалити</a></li>
                   					</ul>
 								</div>
 							</td>
@@ -89,8 +103,8 @@
 						<tr>
               				<td>2</td>
               				<td><img class="img-circle" src="./img/me.jpeg" height="30" width="30" /></td>
-				            <td><a href="#">Подоба</td>
-				            <td><a href="#">Віталій</td>
+				            <td><a href="{% url "students_edit" 2 %}">Подоба</td>
+				            <td><a href="{% url "students_edit" 2 %}">Віталій</td>
 				            <td>254</td>
               				<td>
 				                <div class="btn-group">
@@ -99,9 +113,9 @@
 				                    <span class="caret"></span>
 				                  </button>
 				                  <ul class="dropdown-menu" role="menu">
-				                    <li><a href="/home/taliana/static/form.html">Редагувати</a></li>
-				                    <li><a href="#">Відвідування</a></li>
-				                    <li><a href="#">Видалити</a></li>
+				                    <li><a href="{% url "students_edit" 2 %}">Редагувати</a></li>
+				                    <li><a href="/journal/2">Відвідування</a></li>
+				                    <li><a href="{% url "students_delete" 2 %}">Видалити</a></li>
 				                  </ul>
 				                </div>
 				              </td>
@@ -109,8 +123,8 @@
 				        <tr>
 				        	<td>3</td>
 				        	<td><img class="img-circle" src="./img/piv.png" height="30" width="30" /></td>
-				        	<td><a href="#">Притула</td>
-				        	<td><a href="#">Тарас</td>
+				        	<td><a href="{% url "students_edit" 3 %}">Притула</td>
+				        	<td><a href="{% url "students_edit" 3 %}">Тарас</td>
 				        	<td>5332</td>
 				        	<td>
 				        		<div class="btn-group">
@@ -119,9 +133,9 @@
                     						<span class="caret"></span>
                   					</button>
                   					<ul class="dropdown-menu" role="menu">
-                  						<li><a href="/home/taliana/static/form.html">Редагувати</a></li>
-                  						<li><a href="#">Відвідування</a></li>
-                  						<li><a href="#">Видалити</a></li>
+                  						<li><a href="{% url "students_edit" 3 %}">Редагувати</a></li>
+                  						<li><a href="/journal/3">Відвідування</a></li>
+                  						<li><a href="{% url "students_delete" 3 %}">Видалити</a></li>
                   					</ul>
 				        		</div>
 				        	</td>
