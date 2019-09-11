@@ -1,0 +1,108 @@
+{% extends "students/base.html" %}
+
+{% block meta_title %}Список Груп{% endblock meta_title %}
+
+{% block title %}Список Груп{% endblock title %}
+
+
+{% block content %}
+
+				<!--Month & year-->
+			<div class="row" id="month">
+				<div class="col-xs-12" id="month-year">
+					<a href="#" id="arr">&larr;</a>
+					Жовтень 2019
+					<a href="#" id="arr">&rarr;</a>
+				</div>
+			</div>
+
+				<!--Start student listing-->
+				<table class="table">
+					<thead>
+						<tr class="border">
+              				<th><a href="#">#</a></th>
+              				<th><a href="#">Студент &uarr;</a></th>
+              				<th><a href="#">Вт 1</a></th>
+              				<th><a href="#">Ср 2</a></th>
+              				<th><a href="#">Чт 3</a></th>
+              				<th><a href="#">Пт 4</a></th>
+              				<th><a href="#">Сб 5</a></th>
+              				<th><a href="#">Нд 6</a></th>
+              				<th><a href="#">Пн 7</a></th>
+              				<th><a href="#">Вт 8</a></th>
+              				<th><a href="#">Ср 9</a></th>
+              				<th><a href="#">Чт 10</a></th>
+              				<th><a href="#">Пт 11</a></th>
+              				<th><a href="#">Сб 12</a></th>
+              				<th><a href="#">Нд 13</a></th>
+              				<th><a href="#">Пн 14</a></th>
+              				<th><a href="#">Вт 15</a></th>
+              				<th><a href="#">Ср 16</a></th>
+              				<th><a href="#">Чт 17</a></th>
+              				<th><a href="#">Пт 18</a></th>
+              				<th><a href="#">Сб 19</a></th>
+              				<th><a href="#">Нд 20</a></th>
+              				<th><a href="#">Пн 21</a></th>
+              				<th><a href="#">Вт 22</a></th>
+              				<th><a href="#">Ср 23</a></th>
+              				<th><a href="#">Чт 24</a></th>
+              				<th><a href="#">Пт 25</a></th>
+              				<th><a href="#">Сб 26</a></th>
+              				<th><a href="#">Нд 27</a></th>
+              				<th><a href="#">Пн 28</a></th>
+              				<th><a href="#">Вт 29</a></th>
+              				<th><a href="#">Ср 30</a></th>
+              				<th><a href="#">Чт 31</a></th>
+
+            			</tr>
+					</thead>
+
+					<tbody>
+						<tr class="border">
+							<td class="border">{{ forloop.counter }}</td>
+							<td><a href="{% url "journal_edit" journal.id%}">{{ journal.last_name }}</td>
+							<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+				        	<td><input type="checkbox" name="subscribe" id="subscribe-field"></td>
+						</tr>
+						
+					</tbody>
+				</table>
+				<nav>
+					<ul class="pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</nav>
+	{% endblock content %}

@@ -24,4 +24,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
+    # journal urls
+    url(r'^journal/$', 'students.views.journal.journal_list', name='journal'),
+
 )
