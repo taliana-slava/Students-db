@@ -1,0 +1,90 @@
+{% extends "students/base.html" %}
+{% load static from staticfiles %}
+{% block meta_title %}Додати студента{% endblock meta_title %}
+{% block title %}Додати студента{% endblock title %}
+
+{% block status_message %}
+        {% if errors %}
+        Будь-ласка, виправте наступні помилки
+        {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<form class="form-horizontal" action="{% url "students_add" %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+					<div class="form-group {% if errors.first_name %}has-error{% endif %}">
+						<label for="first_name" class="col-sm-2 col-form-label control-label">Імʼя*</label>
+                        <div class="col-sm-10">
+						    <input class="form-control" type="text" name="first_name" id="first_name" value="{{ request.POST.first_name }}">
+                            <span class="help-block">{{ errors.first_name }}</span>
+                        </div>
+					</div>
+
+                    <div class="form-group {% if errors.last_name %}has-error{% endif %}">
+						<label for="last_name" class="col-sm-2 col-form-label control-label">Прізвище*</label>
+                        <div class="col-sm-10">
+						    <input class="form-control" type="text" name="last_name" id="last_name" value="{{ request.POST.last_name }}">
+                            <span class="help-block">{{ errors.last_name }}</span>
+                        </div>
+					</div>
+
+					<div class="form-group {% if errors.middle_name %}has-error{% endif %}">
+						<label for="middle_name" class="col-sm-2 col-form-label control-label">По-батькові</label>
+                        <div class="col-sm-10">
+						    <input class="form-control" type="text" name="middle_name" id="middle_name" value="{{ request.POST.middle_name }}">
+                        </div>
+					</div>
+
+                    <div class="form-group {% if errors.birthday %}has-error{% endif %}">
+						<label for="birthday" class="col-sm-2 col-form-label control-label">Дата народження*</label>
+                        <div class="col-sm-10">
+						    <input class="form-control" type="date" name="birthday" id="birthday" value="{{ request.POST.birthday }}">
+                            <span class="help-block">{{ errors.birthday }}</span>
+                        </div>
+					</div>
+
+                    <div class="form-group file-field {% if errors.photo %}has-error{% endif %}">
+						<label for="photo" class="col-sm-2 col-form-label control-label">Фото:</label>
+                        <div class="col-sm-10">
+      					    <input class="form-control" type="file" name="photo" id="photo"value="{{ request.FILES.photo }}">
+                        </div>
+					</div>
+
+					<div class="form-group {% if errors.ticket %}has-error{% endif %}">
+						<label for="ticket" class="col-sm-2 col-form-label control-label">№ Білету*</label>
+                        <div class="col-sm-10">
+						    <input class="form-control" type="text" name="ticket" id="ticket" value="{{ request.POST.ticket }}">
+                            <span class="help-block">{{ errors.ticket }}</span>
+                        </div>
+					</div>
+
+					<div class="form-group {% if errors.student_group %}has-error{% endif %}">
+    					<label for="student_group" class="col-sm-2 col-form-label control-label">Група*</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="student_group" id="student_group">
+                                <option value="">Виберіть групу</option>
+                                {% for group in groups %}
+                                <option value="{{ group.id }}" {% if group.id == request.POST.student_group|add:0 %}selected="1"{% endif %}>{{ group.title }}</option>
+                                {% endfor %}
+					    </select>
+                        </div>
+                    <span class="help-block">{{ errors.student_group }}</span>
+					</div>
+
+					<div class="form-group {% if errors.notes %}has-error{% endif %}">
+						<label for="notes" class="col-sm-2 col-form-label control-label">Додаткові нотатки</label>
+                        <div class="col-sm-10">
+						    <textarea name="notes" id="notes" rows="5" cols="35">текст</textarea>
+                        </div>
+					</div>
+
+					<div>
+						<input class="btn btn-primary" type="submit" name="add_button" id="add_button" value="Зберегти">
+						<button class="btn btn-link" name="cancel_button" id="cancel_button" type="submit">Скасувати</button>
+					</div>
+
+				</form>
+
+
+{% endblock content %}

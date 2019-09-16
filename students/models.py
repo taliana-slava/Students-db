@@ -9,6 +9,7 @@ class Student(models.Model):
 		verbose_name = u"Студент"
 		verbose_name_plural = u"Студенти"
 
+
 	first_name = models.CharField(
 	max_length = 256,
 	blank = False,
@@ -48,8 +49,8 @@ class Student(models.Model):
 		return u"%s %s" % (self.first_name, self.last_name)
 
 	student_group = models.ForeignKey('Group',
-	verbose_name = u"Група",
-	blank = False,
+	verbose_name=u"Група",
+    blank = False,
 	null = True,
 	on_delete = models.PROTECT)
 
@@ -72,14 +73,15 @@ class Group(models.Model):
 		on_delete=models.SET_NULL)
 
 	notes = models.TextField(
-	blank = True,
-	verbose_name = u"Додаткові нотатки")
+	blank=True,
+	verbose_name=u"Додаткові нотатки")
 
 	def __unicode__(self):
 		if self.leader:
 			return u" %s (%s %s)" % (self.title, self.leader.first_name, self.leader.last_name)
 		else:
-			return u"%s" % (self.title)
+			return u"%s" % self.title
+
 
 
 
