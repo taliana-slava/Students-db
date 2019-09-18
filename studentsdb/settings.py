@@ -9,15 +9,13 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 from django.conf import global_settings
 
-
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + ("django.core.context_processors.request",
- "studentsdb.context_processors.students_proc",
-)
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + ("django.core.context_processors.request",
+"studentsdb.context_processors.students_proc",)
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -41,8 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles', 'students',
-
+    'django.contrib.staticfiles',
+    'crispy_forms',
+    'students'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,7 +72,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
 TIME_ZONE = 'UTC'
 
@@ -91,5 +90,17 @@ STATIC_URL = '/static/'
 
 PORTAL_URL = 'http://localhost:8000'
 
+# email settings
+ADMIN_EMAIL = 'admin@studentsdb.com'
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'taliana.slava@gmail.com'
+EMAIL_HOST_PASSWORD = 'Efs35i7Tp.xfrQ4'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
